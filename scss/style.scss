@@ -3,7 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     background: rgb(255, 255, 255);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(112, 18, 182, 1) 100%);
+    background: linear-gradient(0deg, rgba(195,121,250,1) 0%, rgba(112,18,182,1) 100%);
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
@@ -408,11 +408,6 @@ button img.supportlama:hover {
     }
 }
 
-.menuicon {
-    
-
-}
-
 @media screen and (max-width:600px) {
     .full-chat-block {
         width: 100%;
@@ -469,4 +464,43 @@ button img.supportlama:hover {
     pointer-events: auto;
     content: "";
     background-color: rgba(0,0,0,0);
+}
+
+.login {
+    background-color: #f1f1f1;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    width: 100%;
+    max-width: 25rem;
+    margin: 0 auto;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);   
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.profile {
+
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.register {
+    background-color: #f1f1f1;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    width: 100%;
+    max-width: 25rem;
+    margin: 0 auto;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);   
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+
 }

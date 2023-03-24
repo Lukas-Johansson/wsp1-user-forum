@@ -4,17 +4,9 @@
 <div class="postbackground">
     <form action="/new" method="post" class="border">
         <div class="inlagg">
-            <select name="author" id="author">
+            <select name="catagory" id="catagory">
                 {% for user in users %}
-                <option value="{{ user.name }}">{{ user.name }}</option>
-                {% endfor %}
-            </select>
-            <label for="author">Författare</label>
-        </div>
-        <div class="inlagg">
-            <select name="author" id="author">
-                {% for user in users %}
-                <option value="{{ user.name }}">{{ user.name }}</option>
+                <option value="{{ user.catagory }}">{{ user.catagory }}</option>
                 {% endfor %}
             </select>
             <label for="author">Category</label>
@@ -31,44 +23,6 @@
             <button type="submit">Skicka</button>
         </div>
     </form>
-</div>
-
-<div class="chat-bar-collapsible">
-    <button id="chat-button" type="button" class="collapsible"><img src="/images/supportlama.png" alt="logo"
-            class="supportlama">
-    </button>
-
-    <div class="content">
-        <div class="full-chat-block">
-            <!-- Message Container -->
-            <div class="outer-container">
-                <div class="chat-container">
-                    <!-- Messages -->
-                    <div id="chatbox">
-                        <h5 id="chat-timestamp"></h5>
-                        <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
-                    </div>
-
-                    <!-- User input box -->
-                    <div class="chat-bar-input-block">
-                        <div id="userInput">
-                            <input id="textInput" class="input-box" type="text" name="msg"
-                                placeholder="Tap 'Enter' to send a message">
-                            <p></p>
-                        </div>
-
-                        <div class="chat-bar-icons">
-                            <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send" onclick="sendButton()"></i>
-                        </div>
-                    </div>
-                    <div id="chat-bar-bottom">
-                        <p></p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 {% endblock %}

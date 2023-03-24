@@ -3,7 +3,7 @@ body {
   display: flex;
   flex-direction: column;
   background: rgb(255, 255, 255);
-  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(112, 18, 182) 100%);
+  background: linear-gradient(0deg, rgb(195, 121, 250) 0%, rgb(112, 18, 182) 100%);
   -ms-overflow-style: none;
   /* IE and Edge */
   scrollbar-width: none;
@@ -136,7 +136,7 @@ footer {
 }
 
 .msg:hover {
-  background-color: hsl(0, 0%, 85%);
+  background-color: hsl(0deg, 0%, 85%);
   cursor: pointer;
 }
 
@@ -432,6 +432,42 @@ button img.supportlama:hover {
   pointer-events: auto;
   content: "";
   background-color: rgba(0, 0, 0, 0);
+}
+
+.login {
+  background-color: #f1f1f1;
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  width: 100%;
+  max-width: 25rem;
+  margin: 0 auto;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.profile {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.register {
+  background-color: #f1f1f1;
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  width: 100%;
+  max-width: 25rem;
+  margin: 0 auto;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=style.css.map */

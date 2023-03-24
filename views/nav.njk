@@ -3,9 +3,16 @@
     <button class="navbar__button" onclick="changeImage()"><img src="/images/menuicon.svg" alt="icon" class="menuicon" id="logochange"></button>
     <div class="navbar__collapse">
         <ul class="menu">
+            {% if user %}
             <li><a href="/">Hem</a></li>
+            <li><a href="/profile">Profil</a></li>
             <li><a href="/new">Skapa ett inlägg</a></li>
+            <li><a href="/logout">Logga ut</a></li>
+            {% else %}
+            <li><a href="/">Hem</a></li>
             <li><a href="/login">Logga in</a></li>
+            <li><a href="/register">Registrera</a></li>
+            {% endif %}
         </ul>
     </div>
 </nav>
