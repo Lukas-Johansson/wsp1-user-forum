@@ -2,9 +2,9 @@
 {% block  content %}
 <main class="profile">
     <h1>{{ title }}</h1>
-    <p>Username: {{ name }}</p>
-        <button type="submit"><a href="/logout">Logout</a></button>
-        <button type="submit"><a href="/">Home</a></button>
-        <button type="submit"><a href="/delete">Delete User</a></button>
+    <p>Username: {{ row.name }}</p>
+    <button type="submit"><a href="/logout">Logout</a></button>
+    <button type="submit"><a href="/">Home</a></button>
+    <button type="submit"><a href="/delete">Delete User</a></button>
 </main>
 {% endblock %}

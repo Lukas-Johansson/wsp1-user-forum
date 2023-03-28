@@ -23,11 +23,16 @@ router.get('/', async function (req, res, next) {
 
 router.get('/new', async function (req, res, next) {
     const [users] = await promisePool.query("SELECT * FROM lj04users");
-    res.render('new.njk', {
-        title: 'Nytt inlägg',
-        user : req.session.username || 0,
-        users,
-    });
+    if (req.session.login == 1) {
+        res.render('new.njk', {
+            title: 'Nytt inlägg',
+            user : req.session.username || 0,
+            users,
+        });
+    }
+    else {
+        return res.status(401).send('Access denied')
+    }
 });
 
 router.post('/new', async function (req, res, next) {
@@ -40,6 +45,10 @@ router.post('/new', async function (req, res, next) {
     const userId = user.insertId || user[0][0].id;
     const [rows] = await promisePool.query('INSERT INTO lj04forum (authorId, title, content) VALUES (?, ?, ?)', [userId, title, content]);
     res.redirect('/'); 
+
+    
+
+
 });
 
 router.get('/post/:id', async function (req, res) {
@@ -78,22 +87,17 @@ router.post('/profile', async function (req, res, next) {
 });
 
 router.get('/logout', async function (req, res, next) {
+    if (req.session.login == 1) {
+        req.session.login = 0;
+        req.session.username = 0;
+        res.redirect('/');
+    }
 
-    res.render('logout.njk', { title: 'Logout' });
-    req.session.login = 0;
+    else {
+        return res.status(401).send('Access denied')
+    }
 });
 
-router.post('/logout', async function (req, res, next) {
-
-    // if (req.session.login === 1) {
-    //     req.session.login = 0;
-    //     res.redirect('/')
-    // }
-    // else {
-    //     return res.status(401).send('Access denied')
-    // }
-
-});
 
 router.post('/login', async function (req, res, next) {
     const { username, password } = req.body;
@@ -156,6 +160,9 @@ router.post('/register', async function (req, res, next) {
     }
     else if (password.length === 0) {
         return res.send('Password is Required')
+    }
+    else if (password.length < 8) {
+        return res.send('Password must be at least 8 characters')
     }
     else if (passwordConfirmation.length === 0) {
         return res.send('Password is Required')

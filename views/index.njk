@@ -12,12 +12,11 @@
             {% for row in rows %}
             <li>
                 <div class="msg">
-                    <a class="stretched-link" href="/post/{{ row.id }}">{{ row.title }}</a>
-                    <div class="msg-title">
-                        <p>{{ row.name }}</p>
-                    </div>
+                        <div class="link">
+                            <div class="msg-title"><a class="stretched-link" href="/post/{{ row.id }}">{{ row.title }}</a></div>
+                        </div> 
                     <div class="msg-content">
-                        <p>{{ row.content }}</p>
+                        <p>By {{ row.name }}</p>
                         <p>{{ row.createdAt }}</p>
                     </div>
                 </div>

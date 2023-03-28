@@ -10,6 +10,11 @@ body {
     scroll-behavior: smooth;
 }
 
+a {
+    text-decoration: none; 
+    color: black; 
+}
+
 body::-webkit-scrollbar {
     display: none;
 }
@@ -121,6 +126,9 @@ footer {
     border-radius: 0.5rem;
     width: min(175ch, 100vw - 2rem);
     margin-inline: auto;
+    @media (max-width: 600px) {
+        width: min(175ch, 77vw - 2rem);
+    }
 }
 
 .senaste {
@@ -240,7 +248,7 @@ ul {
 }
 
 .full-chat-block {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(112, 18, 182, 1) 100%);
+    background: linear-gradient(0deg, rgba(195,121,250,1) 0%, rgba(112,18,182,1) 100%);
     text-align: center;
     overflow: auto;
     scrollbar-width: none;
@@ -478,7 +486,9 @@ button img.supportlama:hover {
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    @media (max-width: 600px) {
+        width: 90%;
+    }
 }
 
 .profile {
@@ -502,5 +512,8 @@ button img.supportlama:hover {
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%); 
-
+    @media (max-width: 600px) {
+        width: 90%;
+    }
 }
+

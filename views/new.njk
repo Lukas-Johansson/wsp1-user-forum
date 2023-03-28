@@ -4,12 +4,12 @@
 <div class="postbackground">
     <form action="/new" method="post" class="border">
         <div class="inlagg">
-            <select name="catagory" id="catagory">
+            <select name="author" id="author">
                 {% for user in users %}
-                <option value="{{ user.catagory }}">{{ user.catagory }}</option>
+                <option value="{{ user.name }}">{{ user.name }}</option>
                 {% endfor %}
             </select>
-            <label for="author">Category</label>
+            <label for="author">Författare</label>
         </div>
         <div class="inlagg">
             <input type="text" name="title" id="title">
