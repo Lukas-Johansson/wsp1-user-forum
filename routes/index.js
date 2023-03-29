@@ -45,10 +45,6 @@ router.post('/new', async function (req, res, next) {
     const userId = user.insertId || user[0][0].id;
     const [rows] = await promisePool.query('INSERT INTO lj04forum (authorId, title, content) VALUES (?, ?, ?)', [userId, title, content]);
     res.redirect('/'); 
-
-    
-
-
 });
 
 router.get('/post/:id', async function (req, res) {
@@ -101,10 +97,8 @@ router.get('/logout', async function (req, res, next) {
 
 router.post('/login', async function (req, res, next) {
     const { username, password } = req.body;
-
-
     if (username.length == 0) {
-        return res.send('Username is Required')
+        return res.send('Password is Required')
     }
     if (password.length == 0) {
         return res.send('Password is Required')
@@ -128,8 +122,6 @@ router.post('/login', async function (req, res, next) {
         }
 
     })
-
-
 });
 
 router.get('/crypt/:password', async function (req, res, next) {
@@ -161,7 +153,7 @@ router.post('/register', async function (req, res, next) {
     else if (password.length === 0) {
         return res.send('Password is Required')
     }
-    else if (password.length < 8) {
+    else if (password.length <= 8) {
         return res.send('Password must be at least 8 characters')
     }
     else if (passwordConfirmation.length === 0) {

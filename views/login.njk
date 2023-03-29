@@ -2,12 +2,14 @@
 {% block content %}
 <main class="login">
     <h1>{{ title }}</h1>
+    <label for="username">Username</label>
     <form action="/login" method="POST">
     <input type="text" name="username">
-    <input type="password" name="password">
-    <button type="submit">Login</button>
+    <label for="password">Password</label>
+    <input type="password" name="password" class="password">
+    <button type="submit" class="password">Login</button>
     </form>
-    Don't have a user? register <a href="/register">here</a>
+    <p>don't have an account?<a href="/register"> Register here </a></p>
 </main>
 
 {% endblock %}
