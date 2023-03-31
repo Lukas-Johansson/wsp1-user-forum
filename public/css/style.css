@@ -105,6 +105,8 @@ footer {
 .border {
   padding: 2rem;
   margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .inlagg {
@@ -166,11 +168,6 @@ footer {
 
 .msg-hidden {
   display: none;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
 }
 
 ul {
@@ -494,9 +491,9 @@ button img.supportlama:hover {
   margin-bottom: 0.6rem;
 }
 
-.newpostform {
+.logform {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */
