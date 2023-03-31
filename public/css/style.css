@@ -494,4 +494,9 @@ button img.supportlama:hover {
   margin-bottom: 0.6rem;
 }
 
+.newpostform {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /*# sourceMappingURL=style.css.map */

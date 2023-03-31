@@ -32,3 +32,4 @@ app.use(session({
 app.use('/', indexRouter);
 
 module.exports = app;
+

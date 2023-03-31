@@ -40,5 +40,21 @@ Börjar med att tvätta data och kanske försöka börja göra att man kan posta
 
 Det är att fixat reningnen av inamtning måste fortfarande jobba på den
 
+# 2023-03-31
+
+## Vad gjode jag senast?
+
+Fixade monile variant och börjat med tvättning samt fixat lite roliga färger etc.
+
+## Vad ska jag göra idag?
+
+Helst göra klart tvättningen av data och kanske kunna hosta det vore lite coolt.
+
+
+## Vad hindrar mig?
+
+
+
+
 
 

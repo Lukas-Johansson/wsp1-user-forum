@@ -1,6 +1,9 @@
 {% extends "layout.njk" %}
 {% block content %}
 <main class="login">
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
     <h1>{{ title }}</h1>
     <label for="username">Username</label>
     <form action="/login" method="POST">
@@ -11,5 +14,6 @@
     </form>
     <p>don't have an account?<a href="/register"> Register here </a></p>
 </main>
+
 
 {% endblock %}

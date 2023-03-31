@@ -2,15 +2,7 @@
 {% block content %}
 
 <div class="postbackground">
-    <form action="/new" method="post" class="border">
-        <div class="inlagg">
-            <select name="author" id="author">
-                {% for user in users %}
-                <option value="{{ user.name }}">{{ user.name }}</option>
-                {% endfor %}
-            </select>
-            <label for="author">Författare</label>
-        </div>
+    <form action="/new" method="post" class="border" class="newpostform">
         <div class="inlagg">
             <input type="text" name="title" id="title">
             <label for="title">Titel</label>
