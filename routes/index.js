@@ -16,7 +16,7 @@ const promisePool = pool.promise();
 module.exports = router;
 
 router.get('/', async function (req, res, next) {
-    const [rows] = await promisePool.query("SELECT lj04forum.*, lj04users.name FROM lj04forum JOIN lj04users ON lj04forum.authorId = lj04users.id")
+    const [rows] = await promisePool.query("SELECT lj04forum.*, lj04users.name FROM lj04forum JOIN lj04users ON lj04forum.authorId = lj04users.id ORDER BY createdAt DESC")
     res.render('index.njk', {
         rows: rows,
         title: 'Forum',
@@ -205,6 +205,34 @@ router.post('/delete', async function (req, res, next) {
         const [Delet] = await promisePool.query('DELETE FROM dbusers WHERE name = ?', [username]);
         req.session.login = 0
         res.redirect('/')
+    }
+});
+
+router.get('/edit', async function (req, res, next) { 
+    res.render('edit.njk', { title: 'Edit' });
+});
+
+router.post('/edit', async function (req, res, next) {
+    const { username, password, passwordConfirmation } = req.body;
+    if (req.session.login === 1) {
+        if (password.length === 0) {
+            return res.render('edit.njk', { title: 'Edit', error: 'Password is Required' });
+        }
+        else if (password.length <= 8) {
+            return res.render('edit.njk', { title: 'Edit', error: 'Password must be atleast 8 characters.' });
+        }
+        else if (passwordConfirmation.length === 0) {
+            return res.render('edit.njk', { title: 'Edit', error: 'Password is Required' });
+        }
+        else if (password !== passwordConfirmation) {
+            return res.render('edit.njk', { title: 'Edit', error: 'Passwords does not match' });
+        }
+        else {
+            bcrypt.hash(password, 10, async function (err, hash) {
+                const [edit] = await promisePool.query('UPDATE lj04users SET password = ? WHERE name = ?', [hash, username]);
+                res.redirect('/profile')
+            })
+        }
     }
 });
 

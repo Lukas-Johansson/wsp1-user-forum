@@ -53,6 +53,7 @@ Helst göra klart tvättningen av data och kanske kunna hosta det vore lite cool
 
 ## Vad hindrar mig?
 
+Inget just nu eftesom jag blev klar med alla funktioner som jag hade hoppas på att få klart idag
 
 
 
